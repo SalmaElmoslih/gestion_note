@@ -29,8 +29,8 @@ public class rep<T , U> {
 		}
 	}
 	
-	public T findById(U id) {
-		return em.find(EntityClass, id);
+	public T findById(U CIN) {
+		return em.find(EntityClass, CIN);
 	}
 	
 	public List<T> findAll(){
@@ -38,12 +38,38 @@ public class rep<T , U> {
 
 	}
 	
-	public void deleteById(U id) {
-		T t = em.find(EntityClass, id);
+	public void deleteById(U CIN) {
+		T t = em.find(EntityClass, CIN);
 		if(t != null) {
 			try {
 				em.getTransaction().begin();
 				em.remove(t);
+				em.getTransaction().commit();
+			}catch(Exception e) {
+				em.getTransaction().rollback();
+			}
+		}
+	}
+	
+	public void delete(T t) {
+		
+		if(t != null) {
+			try {
+				em.getTransaction().begin();
+				em.remove(t);
+				em.getTransaction().commit();
+			}catch(Exception e) {
+				em.getTransaction().rollback();
+			}
+		}
+	}
+	
+	public void modify(T t) {
+		
+		if(t != null) {
+			try {
+				em.getTransaction().begin();			
+				em.merge(t);
 				em.getTransaction().commit();
 			}catch(Exception e) {
 				em.getTransaction().rollback();

@@ -1,31 +1,42 @@
 package entity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "etudiant")
-public class etudiant extends personne {
-	@Id
-	@Column(name = "CNE", nullable = false, length = 255) 
-    private String CNE;
 
+public class etudiant extends personne {
+	 @Column
+    private String CNE;
     
-    public etudiant(String nom, String prenom, String CIN,int age , String email , String password, String cNE) {
-    	super(nom, prenom,CIN,age,email,password);
-		CNE = cNE;
-		
-        
+    
+    public etudiant(String nom, String prenom, String cIN, int age, String email, String password,String CNE) {
+		super(nom, prenom, cIN, age, email, password);
+		// TODO Auto-generated constructor stub
+		this.CNE=CNE;
 	}
+
+	
 
 
 	@Override
-    public void consulterNotes(String matiere) {
-        System.out.println("L'étudiant consulte les notes pour la matière " + matiere);
-    }
-    
-    
+	public void consulterNotes(String matiere) {
+		// TODO Auto-generated method stub
+		
+	}
 
+    // getters and setters
+	
+	 @Override
+	    public String toString() {
+	        return "Etudiant { " +
+	               "CNE='" + CNE + '\'' +
+	               ", nom='" + nom + '\'' +
+	               ", prenom='" + prenom + '\'' +
+	               ", CIN='" + CIN + '\'' +
+	               ", age=" + age +
+	               ", email='" + email + '\'' +
+	               ", password='" + password + '\'' +
+	               " }";
+	    }
 }

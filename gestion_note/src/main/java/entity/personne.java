@@ -11,11 +11,11 @@ import javax.persistence.InheritanceType;
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class personne {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	protected int id;
+
+    protected String CIN;
     protected String nom;
     protected String prenom;
-    protected String CIN;
+    
     protected int age;
     protected String  email;
     protected String password;
@@ -40,13 +40,7 @@ public abstract class personne {
 
 
 
-public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getNom() {
 		return nom;
 	}
