@@ -1,3 +1,6 @@
+package entity;
+import javax.persistance.*;
+
 public class Enseignant extends personne {
     private int idEnseignant;
     private String nom;
