@@ -13,12 +13,14 @@ public class Matiere {
 	
 	public Matiere() {
 	}
+	
 	public Matiere(Long id, String nom, String date_ratt, String controlle) {
 		this.id = id;
 		this.nom = nom;
 		this.date_ratt = date_ratt;
 		this.controlle = controlle;
 	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -42,6 +44,10 @@ public class Matiere {
 	}
 	public void setControlle(String controlle) {
 		this.controlle = controlle;
+	}
+	@Override
+	public String toString() {
+		return "Matiere [id=" + id + ", nom=" + nom + ", date_ratt=" + date_ratt + ", controlle=" + controlle + "]";
 	}
 	
 

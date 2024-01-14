@@ -30,7 +30,8 @@ public class etudiant extends personne {
 	public void setCNE(String cNE) {
 		CNE = cNE;
 	}
-
+	
+/*
 	public Set<Notes> getNotes() {
         return notes;
     }
@@ -45,7 +46,8 @@ public class etudiant extends personne {
     public void removeNote(Notes note) {
         this.notes.remove(note);
         note.getEtudiants().remove(this); // Bidirectional relationship
-    }
+    }*/
+	
 	@Override
 	public void consulterNotes(Matiere matiere, etudiant etudiant) {
 		// TODO Auto-generated method stub

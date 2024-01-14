@@ -25,11 +25,12 @@ public class Notes {
     public Notes() {
     }
 
-    public Notes(double note, Matiere matiere, etudiant etudiant, Enseignant enseignant) {
+    public Notes(etudiant etd, Matiere matiere,double note) {
         this.note = note;
         this.matiere = matiere;
-        this.etudiant = etudiant;
-        this.enseignant = enseignant;
+        this.etudiant = etd;
+        
+       
     }
 
     // Getters and setters
@@ -73,5 +74,12 @@ public class Notes {
     public void setEnseignant(Enseignant enseignant) {
         this.enseignant = enseignant;
     }
+
+	@Override
+	public String toString() {
+		return "Notes [id=" + id + ", note=" + note + ", matiere=" + matiere + ", etudiant=" + etudiant + "]";
+	}
+    
+    
 }
 

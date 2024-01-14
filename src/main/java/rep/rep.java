@@ -17,6 +17,11 @@ public class rep<T , U> {
 		emf = Persistence.createEntityManagerFactory("NotePu");
 		em = emf.createEntityManager();
 	}
+	
+	  public rep(Class<T> entityClass, EntityManagerFactory emf) {
+	        this.EntityClass = entityClass;
+	        this.emf = emf;
+	    }
 
 	 
 	public void save (T t) {
