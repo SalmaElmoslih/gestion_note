@@ -49,6 +49,11 @@ public class Matiere {
 	public String toString() {
 		return "Matiere [id=" + id + ", nom=" + nom + ", date_ratt=" + date_ratt + ", controlle=" + controlle + "]";
 	}
+
+	public String getNomMatiere() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }

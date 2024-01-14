@@ -52,6 +52,14 @@ public class Enseignant extends personne {
 
     @Override
     public void consulterNotes(Matiere matiere, etudiant etudiant) {
-        // Logic to consult notes
+if (matiere != null && etudiant == null) {
+            
+            System.out.println("Notes pour la matière " + matiere.getNomMatiere() + ":");
+        } else if (matiere == null && etudiant != null) {
+
+            System.out.println("Notes pour l'étudiant " + etudiant.getNom() + " " + etudiant.getPrenom() + ":");
+        } else {
+            System.out.println("Veuillez spécifier soit une matière, soit un étudiant.");
+        }
     }
 }
