@@ -5,28 +5,35 @@ import javax.persistence.*;
 public class Notes {
 	@Id
 	@GeneratedValue
-	private Integer id;
-	private String matiere;
+	private etudiant etd;
+	private Matiere matiere;
 	private Double note;
 	public Notes() {
 	}
-	public Notes(Integer id, String matiere, Double note) {
-		this.id = id;
+	
+	public Notes(etudiant etd, Matiere matiere, Double note) {
+		this.etd = etd;
 		this.matiere = matiere;
 		this.note = note;
 	}
-	public int getId() {
-		return id;
+	
+	
+	public etudiant getEtd() {
+		return etd;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+
+	public void setEtd(etudiant etd) {
+		this.etd = etd;
 	}
-	public String getMatiere() {
+
+	public Matiere getMatiere() {
 		return matiere;
 	}
-	public void setMatiere(String matiere) {
+
+	public void setMatiere(Matiere matiere) {
 		this.matiere = matiere;
 	}
+
 	public Double getNote() {
 		return note;
 	}

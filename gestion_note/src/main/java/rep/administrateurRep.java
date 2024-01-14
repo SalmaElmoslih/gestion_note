@@ -21,6 +21,7 @@ public class administrateurRep extends rep<administrateur,String>{
 	
 	
 
+	//ajout et modification
 	    public String ajouterEtudiant(etudiant etudiant) {
 	    	etudiantRep.save(etudiant);
 	        return "L'administrateur ajoute l'étudiant " + etudiant.getNom();
@@ -36,6 +37,9 @@ public class administrateurRep extends rep<administrateur,String>{
 	        return "L'administrateur a modifier l'étudiant " + etudiant.getNom();
 	    }
 
-	   
+	   //affichage
+	    
+	    //affichage des note par module
+	    
 
 }
