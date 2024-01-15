@@ -1,11 +1,13 @@
 package rep;
 
+import entity.Matiere;
 import entity.administrateur;
 import entity.etudiant;
 
 public class administrateurRep extends rep<administrateur,String>{
 
 	private EtudiantRep etudiantRep;
+	private MatiereRep matiereRep;
 	
 		
 	public administrateurRep() {
@@ -18,6 +20,11 @@ public class administrateurRep extends rep<administrateur,String>{
 		 this.etudiantRep = etudiantRep;
 	}
 	
+	public administrateurRep(MatiereRep matiereRep) {		
+		super(administrateur.class);	
+		 this.matiereRep = matiereRep;
+	}
+	
 	
 	
 
@@ -25,6 +32,13 @@ public class administrateurRep extends rep<administrateur,String>{
 	    	etudiantRep.save(etudiant);
 	        return "L'administrateur ajoute l'étudiant " + etudiant.getNom();
 	    }
+	    
+	    public String ajouterMatiere(Matiere matiere) {
+	    	matiereRep.save(matiere);
+	        return "L'administrateur ajoute une matiere" ;
+	    }
+	    
+	    
 
 	    public String modifierEtudiant(etudiant etudiant) {
 	    	etudiantRep.modify(etudiant);

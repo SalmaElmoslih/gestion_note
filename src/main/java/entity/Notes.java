@@ -5,7 +5,6 @@ public class Notes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private double note;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -25,11 +24,11 @@ public class Notes {
     public Notes() {
     }
 
-    public Notes(etudiant etd, Matiere matiere,double note) {
+    public Notes(etudiant etd, Matiere matiere,double note,Enseignant enseignant) {
         this.note = note;
         this.matiere = matiere;
         this.etudiant = etd;
-        
+        this.enseignant= enseignant;
        
     }
 

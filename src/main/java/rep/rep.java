@@ -9,13 +9,14 @@ import javax.persistence.Persistence;
 public class rep<T , U> {
 	private Class<T> EntityClass;
 	private EntityManagerFactory emf;
-	private EntityManager em;
+	protected static EntityManager em;
 	
 	
 	public rep(Class<T> entityClass) {
 		this.EntityClass = entityClass;
 		emf = Persistence.createEntityManagerFactory("NotePu");
-		em = emf.createEntityManager();
+		if (em==null)
+			em = emf.createEntityManager();
 	}
 	
 	  public rep(Class<T> entityClass, EntityManagerFactory emf) {
@@ -27,9 +28,11 @@ public class rep<T , U> {
 	public void save (T t) {
 		try {
 			em.getTransaction().begin();
+			System.out.println(t);
 			em.persist(t);
 			em.getTransaction().commit();
 		}catch(Exception e) {
+			System.out.println("Exceptiom  :  "+e);
 			em.getTransaction().rollback();
 		}
 	}

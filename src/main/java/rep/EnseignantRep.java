@@ -20,15 +20,12 @@ public class EnseignantRep extends rep<Enseignant,String> {
 	}
 	
 	
-	public String ajouterNote(etudiant etd, Matiere matiere, double note ) {
-	        Notes nouvelleNote = new Notes(etd, matiere, note);
+	public String ajouterNote(Notes nouvelleNote) {
+	       // Notes nouvelleNote = new Notes(etd, matiere, note);
 	        noteRep.save(nouvelleNote);
-	        return "note ajouter " ;
-
-	   
+	        return "note ajouter " ;	   
 	}
 
-	
 
 
 	 /*public List<Notes> getNotes(Enseignant enseignant) {

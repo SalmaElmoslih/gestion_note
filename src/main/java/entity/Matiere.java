@@ -11,14 +11,20 @@ public class Matiere {
 	private String date_ratt;
 	private String controlle;
 	
+	@ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "enseignant_id")
+	private Enseignant enseignant;
+	
+	
 	public Matiere() {
 	}
 	
-	public Matiere(Long id, String nom, String date_ratt, String controlle) {
+	public Matiere(Long id, String nom, String date_ratt, String controlle,Enseignant enseignant) {
 		this.id = id;
 		this.nom = nom;
 		this.date_ratt = date_ratt;
 		this.controlle = controlle;
+		this.enseignant=enseignant;
 	}
 	
 	public Long getId() {

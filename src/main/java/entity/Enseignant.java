@@ -16,24 +16,18 @@ public class Enseignant extends personne {
 	@OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "enseignant_id")
     private List<Matiere> matieres = new ArrayList<>();
-	private String matiere;
+	
     
    
 
-    public Enseignant(String nom, String prenom, String cIN, int age, String email, String password, List<Matiere> matieres) {
+    public Enseignant(String nom, String prenom, String cIN, int age, String email, String password) {
         super(nom, prenom, cIN, age, email, password);
-        this.matieres = matieres;
+       
       
     }
     
     
-// un enseignant peut 1 seul matiere
-    public Enseignant(String nom, String prenom, String cIN, int age, String email, String password, String matiere) {
-        super(nom, prenom, cIN, age, email, password);    
-        Matiere m = new Matiere(null, matiere, null, null);
-        this.matieres.add(m);
-       
-    }
+
     
    
     /*public String ajouterNote(NoteRep noteRep,etudiant etd, Matiere matiere, double note) {   	
@@ -42,13 +36,8 @@ public class Enseignant extends personne {
         return "note ajouter " +getNotes();
     }*/
 
-    public List<Notes> getNotes() {
-        return notes;
-    }
+  
 
-    public List<Matiere> getMatieres() {
-        return matieres;
-    }
 
     @Override
     public void consulterNotes(Matiere matiere, etudiant etudiant) {
