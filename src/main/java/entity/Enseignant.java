@@ -13,9 +13,9 @@ public class Enseignant extends personne {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "enseignant")
     private List<Notes> notes = new ArrayList<>();
 	
-	@OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "enseignant_id")
-    private List<Matiere> matieres = new ArrayList<>();
+	//@OneToMany(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "enseignant_id")
+    //private List<Matiere> matieres = new ArrayList<>();
 	
     
    
