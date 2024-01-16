@@ -14,17 +14,21 @@ public class Matiere {
 	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "enseignant_id")
 	private Enseignant enseignant;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "module_id")
+	private Modules module;
 	
 	
 	public Matiere() {
 	}
 	
-	public Matiere(Long id, String nom, String date_ratt, String controlle,Enseignant enseignant) {
+	public Matiere(Long id, String nom, String date_ratt, String controlle,Enseignant enseignant,Modules module) {
 		this.id = id;
 		this.nom = nom;
 		this.date_ratt = date_ratt;
 		this.controlle = controlle;
 		this.enseignant=enseignant;
+		this.module=module;
 	}
 	
 	public Long getId() {

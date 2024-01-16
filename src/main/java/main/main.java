@@ -27,6 +27,7 @@ public class main {
        	NoteRep noteRep =new NoteRep();
        	EnseignantRep enseignantRep= new EnseignantRep();
        	EnseignantRep enseignantRep2= new EnseignantRep(noteRep);
+       	ModuleRep moduleRep= new ModuleRep();
        	
        	
         etudiant etd = new etudiant("salma", "elmeslih", "CD6789", 22,"salma@gmail.com", "123","N34567");
@@ -40,11 +41,11 @@ public class main {
         
         Enseignant esgnt2 = new Enseignant("riffi", "mohamed", "CD456", 25, "riffi@example.com", "4567");
         
-         Matiere m1 = new Matiere(null,"nosql","24/08/2019","20/08/2021",enseignant);
+         //Matiere m1 = new Matiere(null,"nosql","24/08/2019","20/08/2021",enseignant);
          
          Enseignant esgnt3 = new Enseignant("hilali", "adeberahim", "CD569", 59, "hilali@example.com", "9615");
          
-         Matiere m2 = new Matiere(null,"windows","24/08/2019","20/08/2021",esgnt3);
+         //Matiere m2 = new Matiere(null,"windows","24/08/2019","20/08/2021",esgnt3);
          
          
         
@@ -56,9 +57,9 @@ public class main {
         etudiantRep.save(etd);
         etudiantRep.save(etd3);
         admin.save(admin1);
-        matierRep.save(m1);
+        
         enseignantRep.save(esgnt3);
-        matierRep.save(m2);
+        //matierRep.save(m2);
         
         
       
@@ -76,8 +77,11 @@ public class main {
         //test pour admin
         etudiant etdd = new etudiant("sara", "mosliih", "CD4567", 22,"sara@gmail.com", "567","N34678");
         admin2.ajouterEtudiant(etdd);
+        Modules module =new Modules(null,"Base de donnes");
+        Matiere m5 = new Matiere(null,"java","24/08/2019","20/08/2021",esgnt2,module);
+        Matiere m1 = new Matiere(null,"nosql","24/08/2019","20/08/2021",enseignant,module);
         
-        Matiere m5 = new Matiere(null,"java","24/08/2019","20/08/2021",esgnt2);
+        moduleRep.save(module);
         admin3.ajouterMatiere(m5);
         
         // test pour enseignant
@@ -86,7 +90,9 @@ public class main {
         
         Notes n2 = new Notes(etd,m1,16,enseignant);  
         enseignantRep2.ajouterNote(n2);
-                
+        
+        matierRep.save(m1);
+        
  
         System.out.println("Liste de tous les notes :");
         try {
