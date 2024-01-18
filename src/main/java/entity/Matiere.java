@@ -1,12 +1,14 @@
 package entity;
 
+import java.util.*;
+
 import javax.persistence.*;
 
 @Entity
 public class Matiere {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Integer id;
 	private String nom;
 	private String date_ratt;
 	private String controlle;
@@ -17,12 +19,10 @@ public class Matiere {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "module_id")
 	private Modules module;
-	
-	
 	public Matiere() {
 	}
 	
-	public Matiere(Long id, String nom, String date_ratt, String controlle,Enseignant enseignant,Modules module) {
+	public Matiere(Integer id, String nom, String date_ratt, String controlle,Enseignant enseignant,Modules module) {
 		this.id = id;
 		this.nom = nom;
 		this.date_ratt = date_ratt;
@@ -31,10 +31,10 @@ public class Matiere {
 		this.module=module;
 	}
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNom() {
@@ -55,15 +55,13 @@ public class Matiere {
 	public void setControlle(String controlle) {
 		this.controlle = controlle;
 	}
+
 	@Override
 	public String toString() {
 		return "Matiere [id=" + id + ", nom=" + nom + ", date_ratt=" + date_ratt + ", controlle=" + controlle + "]";
 	}
 
 	public String getNomMatiere() {
-		// TODO Auto-generated method stub
-		return null;
+			return null;
 	}
-	
-
 }

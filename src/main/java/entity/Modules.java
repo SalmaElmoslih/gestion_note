@@ -1,23 +1,24 @@
 package entity;
 import java.util.*;
 import javax.persistence.*;
-
 @Entity
 public class Modules {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Integer id;
 	private String nom;
+
+    
 	public Modules() {
 	}
-	public Modules(Long id, String nom) {
+	public Modules(Integer id, String nom) {
 		this.id = id;
 		this.nom = nom;
 	}
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNom() {
@@ -27,5 +28,6 @@ public class Modules {
 		this.nom = nom;
 	}
 	
-	
 }
+	
+

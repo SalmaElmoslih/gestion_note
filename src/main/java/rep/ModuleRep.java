@@ -1,11 +1,14 @@
 package rep;
 
 import entity.Modules;
+import entity.Matiere;
+import entity.Notes;
+import java.util.List;
 
-public class ModuleRep extends rep<Modules,Long> {
+public class ModuleRep extends rep<Modules, Integer> {
 
-	public ModuleRep() {
-		super(Modules.class);
-	}
-
+    public ModuleRep() {
+        super(Modules.class);
+    }
+    
 }

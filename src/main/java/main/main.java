@@ -83,25 +83,30 @@ public class main {
         
         moduleRep.save(module);
         admin3.ajouterMatiere(m5);
-        
+        matierRep.save(m1);
         // test pour enseignant
         Notes nn = new Notes(etdd,m5,20,esgnt2);       
         enseignantRep2.ajouterNote(nn);
         
         Notes n2 = new Notes(etd,m1,16,enseignant);  
         enseignantRep2.ajouterNote(n2);
+        Notes n3 = new Notes(etd,m5,13,enseignant);  
+        noteRep.save(n3);
         
-        matierRep.save(m1);
+        
+        
         
  
         System.out.println("Liste de tous les notes :");
         try {
-            List<Notes> notes = noteRep.findAll();
-            notes.forEach(System.out::println);
+        	Integer i=1;
+        	List<Notes>notes=noteRep.findAll();
+        	notes.forEach(System.out::println);     
+        	//moduleRep.findnotes(i);/
         } catch (Exception e) {
             e.printStackTrace();
-        }
         
+        }
         
         /*System.out.println("Liste des matières et notes pour un seul enseignant :");
         List<Notes> notesEnseignant = enseignantRep.getNotes(enseignant);

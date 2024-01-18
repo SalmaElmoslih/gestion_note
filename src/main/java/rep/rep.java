@@ -6,6 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import entity.Notes;
+
 public class rep<T , U> {
 	private Class<T> EntityClass;
 	private EntityManagerFactory emf;
@@ -84,5 +86,15 @@ public class rep<T , U> {
 			}
 		}
 	}
+	public List<T>findnote(U t){
+		return em.createQuery("SELECT note FROM notes,etudiant,matiere,modules where modules.id=:t", EntityClass)
+				.setParameter("t", t).getResultList();
+	}	
+	/*public List<T> findnotes(U t) {
+	    return em.createQuery("SELECT n FROM Notes n, Etudiant e, Matiere m, Modules mo WHERE mo.id = :t", EntityClass)
+	            .setParameter("t", t)
+	            .getResultList();
+	}*/
+
 
 }

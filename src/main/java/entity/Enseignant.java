@@ -17,10 +17,8 @@ public class Enseignant extends personne {
     //@JoinColumn(name = "enseignant_id")
     //private List<Matiere> matieres = new ArrayList<>();
 	
-    
-   
-
-    public Enseignant(String nom, String prenom, String cIN, int age, String email, String password) {
+	
+	public Enseignant(String nom, String prenom, String cIN, int age, String email, String password) {
         super(nom, prenom, cIN, age, email, password);
        
       
